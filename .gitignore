@@ -1,0 +1,13 @@
+# Temporary and editor files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Do not commit private credentials or unrelated logs
+*.key
+*.pem
+.env

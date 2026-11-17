@@ -1,0 +1,64 @@
+# Linux Task 03 - Commands Used
+
+## Part 1: New User Setup
+
+```bash
+sudo useradd -m -s /bin/bash forensic01
+sudo usermod -aG sudo forensic01
+sudo passwd forensic01
+su - forensic01
+```
+
+## Part 1: Create Directories and Log File
+
+```bash
+mkdir -p /home/forensic01/logs
+cd /home/forensic01/logs
+pwd
+```
+
+Created sys_events.log using cat with a heredoc containing 20 mock log entries.
+
+## Part 2: Log Filtering and Analysis
+
+```bash
+wc -l sys_events.log
+grep "ERROR" sys_events.log
+grep -E "root|user01" sys_events.log
+grep "ERROR" sys_events.log | less
+grep "ERROR" sys_events.log > error_report.txt
+cat error_report.txt
+head -n 5 sys_events.log
+tail -n 5 sys_events.log
+cat sys_events.log
+```
+
+## Part 3: Permissions and Ownership Control
+
+```bash
+touch confidential.txt
+echo "This file contains confidential information." > confidential.txt
+ls -l confidential.txt
+chmod 600 confidential.txt
+ls -l confidential.txt
+sudo chown root confidential.txt
+ls -l confidential.txt
+cat confidential.txt
+```
+
+## Part 4: User Management Commands
+
+```bash
+sudo useradd -m guest1
+sudo useradd -m guest2
+sudo usermod -aG sudo guest1
+id guest1
+id guest2
+sudo userdel -r guest2
+id guest2
+ls /home
+```
+
+## Conclusion
+
+The commands above were used during the Linux Task 03 practical to perform user management, log filtering, file permissions, ownership changes, and user deletion.
